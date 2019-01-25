@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C7F5078-F245-4028-ACA4-185D1CE5AC45}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RentShuttle</RootNamespace>
+    <AssemblyName>RentShuttle</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Car-Wheel.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DB.cs" />
+    <Compile Include="PopUp\DodavanjeNovogaZaposlenikaUpozorenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\DodavanjeNovogaZaposlenikaUpozorenje.Designer.cs">
+      <DependentUpon>DodavanjeNovogaZaposlenikaUpozorenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodavanjeNovogZaposlenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodavanjeNovogZaposlenika.Designer.cs">
+      <DependentUpon>DodavanjeNovogZaposlenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Automobil.cs" />
+    <Compile Include="DanasnjeRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanasnjeRezervacije.Designer.cs">
+      <DependentUpon>DanasnjeRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Najam.cs" />
+    <Compile Include="NaslovnaReferent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NaslovnaReferent.Designer.cs">
+      <DependentUpon>NaslovnaReferent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NaslovnaKorisnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NaslovnaKorisnik.Designer.cs">
+      <DependentUpon>NaslovnaKorisnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\Poslovnica.cs" />
+    <Compile Include="Pocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PraznaRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PraznaRezervacija.Designer.cs">
+      <DependentUpon>PraznaRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PregledRezervacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledRezervacija.Designer.cs">
+      <DependentUpon>PregledRezervacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Prijevoz.cs" />
+    <Compile Include="PopUp\PrijavaError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PrijavaError.Designer.cs">
+      <DependentUpon>PrijavaError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\PrijavaUpozorenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\PrijavaUpozorenje.Designer.cs">
+      <DependentUpon>PrijavaUpozorenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PrijavljenKorisnik.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\Recenzija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\Recenzija.Designer.cs">
+      <DependentUpon>Recenzija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registracija.Designer.cs">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\Rezervacija.cs" />
+    <Compile Include="PopUp\RegistracijaError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RegistracijaError.Designer.cs">
+      <DependentUpon>RegistracijaError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RegistracijaUpozorenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RegistracijaUpozorenje.Designer.cs">
+      <DependentUpon>RegistracijaUpozorenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RegistracijaUspjesna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RegistracijaUspjesna.Designer.cs">
+      <DependentUpon>RegistracijaUspjesna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RezervacijaNajam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezervacijaNajam.Designer.cs">
+      <DependentUpon>RezervacijaNajam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaNajamUpozorenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaNajamUpozorenje.Designer.cs">
+      <DependentUpon>RezervacijaNajamUpozorenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaNajamUspjesno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaNajamUspjesno.Designer.cs">
+      <DependentUpon>RezervacijaNajamUspjesno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaOtkazana.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaOtkazana.Designer.cs">
+      <DependentUpon>RezervacijaOtkazana.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaPrazna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaPrazna.Designer.cs">
+      <DependentUpon>RezervacijaPrazna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RezervacijaUslugePrijevoza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RezervacijaUslugePrijevoza.Designer.cs">
+      <DependentUpon>RezervacijaUslugePrijevoza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaUslugeUpozorenje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaUslugeUpozorenje.Designer.cs">
+      <DependentUpon>RezervacijaUslugeUpozorenje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaUslugeUspjesno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\RezervacijaUslugeUspjesno.Designer.cs">
+      <DependentUpon>RezervacijaUslugeUspjesno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatistickiPodaci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatistickiPodaci.Designer.cs">
+      <DependentUpon>StatistickiPodaci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tip_rezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tip_rezervacije.Designer.cs">
+      <DependentUpon>Tip_rezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Zaposlenik.cs" />
+    <Compile Include="Zaposlenici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposlenici.Designer.cs">
+      <DependentUpon>Zaposlenici.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\_Rent_ShuttleDataSet.Designer.cs" />
+    <Compile Include="DataSet\_Rent_ShuttleDataSet1.Designer.cs" />
+    <Compile Include="DataSet\_Rent_ShuttleDataSet2.Designer.cs" />
+    <Compile Include="DataSet\_Rent_ShuttleDataSet3.Designer.cs" />
+    <Compile Include="DataSet\_Rent_ShuttleDataSet4.Designer.cs" />
+    <Compile Include="DataSet\_Rent_ShuttleDataSet5.Designer.cs" />
+    <Compile Include="PopUp\ZaposlenikDodan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp\ZaposlenikDodan.Designer.cs">
+      <DependentUpon>ZaposlenikDodan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DanasnjeRezervacije.resx">
+      <DependentUpon>DanasnjeRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\DodavanjeNovogaZaposlenikaUpozorenje.resx">
+      <DependentUpon>DodavanjeNovogaZaposlenikaUpozorenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodavanjeNovogZaposlenika.resx">
+      <DependentUpon>DodavanjeNovogZaposlenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NaslovnaReferent.resx">
+      <DependentUpon>NaslovnaReferent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NaslovnaKorisnik.resx">
+      <DependentUpon>NaslovnaKorisnik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PraznaRezervacija.resx">
+      <DependentUpon>PraznaRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PregledRezervacija.resx">
+      <DependentUpon>PregledRezervacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PrijavaError.resx">
+      <DependentUpon>PrijavaError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\PrijavaUpozorenje.resx">
+      <DependentUpon>PrijavaUpozorenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\Recenzija.resx">
+      <DependentUpon>Recenzija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registracija.resx">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RegistracijaError.resx">
+      <DependentUpon>RegistracijaError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RegistracijaUpozorenje.resx">
+      <DependentUpon>RegistracijaUpozorenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RegistracijaUspjesna.resx">
+      <DependentUpon>RegistracijaUspjesna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervacijaNajam.resx">
+      <DependentUpon>RezervacijaNajam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaNajamUpozorenje.resx">
+      <DependentUpon>RezervacijaNajamUpozorenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaNajamUspjesno.resx">
+      <DependentUpon>RezervacijaNajamUspjesno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaOtkazana.resx">
+      <DependentUpon>RezervacijaOtkazana.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaPrazna.resx">
+      <DependentUpon>RezervacijaPrazna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RezervacijaUslugePrijevoza.resx">
+      <DependentUpon>RezervacijaUslugePrijevoza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaUslugeUpozorenje.resx">
+      <DependentUpon>RezervacijaUslugeUpozorenje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\RezervacijaUslugeUspjesno.resx">
+      <DependentUpon>RezervacijaUslugeUspjesno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatistickiPodaci.resx">
+      <DependentUpon>StatistickiPodaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tip_rezervacije.resx">
+      <DependentUpon>Tip_rezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposlenici.resx">
+      <DependentUpon>Zaposlenici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp\ZaposlenikDodan.resx">
+      <DependentUpon>ZaposlenikDodan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="DataSet\_Rent_ShuttleDataSet.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet.xss">
+      <DependentUpon>_Rent_ShuttleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet1.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet1.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet1.xss">
+      <DependentUpon>_Rent_ShuttleDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet2.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet2.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet2.xss">
+      <DependentUpon>_Rent_ShuttleDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet3.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet3.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet3.xss">
+      <DependentUpon>_Rent_ShuttleDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet4.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet4.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet4.xss">
+      <DependentUpon>_Rent_ShuttleDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet5.xsc">
+      <DependentUpon>_Rent_ShuttleDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\_Rent_ShuttleDataSet5.xsd" />
+    <None Include="DataSet\_Rent_ShuttleDataSet5.xss">
+      <DependentUpon>_Rent_ShuttleDataSet5.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Car-Wheel.ico" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\RS_LOGO.png" />
+    <None Include="Resources\RS_LOGO1.jpg" />
+    <None Include="Resources\RS_LOGO.jpg" />
+    <None Include="Resources\Thankyou.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\success.png" />
+    <None Include="Resources\User.png" />
+    <None Include="Resources\Credit-card-256.png" />
+    <None Include="Resources\l1.png" />
+    <None Include="Resources\2015BMW005c_1280_03.png" />
+    <None Include="Resources\Star-256.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\user_white.png" />
+    <None Include="Resources\User_Black.png" />
+    <None Include="Resources\mail_white.png" />
+    <None Include="Resources\Mail_Black.png" />
+    <None Include="Resources\lock_white.png" />
+    <None Include="Resources\Lock_Black.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

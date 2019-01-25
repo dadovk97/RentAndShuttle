@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_Rent_ShuttleDataSet4" targetNamespace="http://tempuri.org/_Rent_ShuttleDataSet4.xsd" xmlns:mstns="http://tempuri.org/_Rent_ShuttleDataSet4.xsd" xmlns="http://tempuri.org/_Rent_ShuttleDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Rent_ShuttleConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Rent_ShuttleConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RentShuttle.Properties.Settings.GlobalReference.Default.Rent_ShuttleConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PoslovnicaTableAdapter" GeneratorDataComponentClassName="PoslovnicaTableAdapter" Name="Poslovnica" UserDataComponentName="PoslovnicaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Rent_ShuttleConnectionString (Settings)" DbObjectName="[Rent&amp;Shuttle].dbo.Poslovnica" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Grad FROM dbo.Poslovnica</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Grad" DataSetColumn="Grad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_Rent_ShuttleDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_Rent_ShuttleDataSet4" msprop:Generator_UserDSName="_Rent_ShuttleDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Poslovnica" msprop:Generator_TableClassName="PoslovnicaDataTable" msprop:Generator_TableVarName="tablePoslovnica" msprop:Generator_TablePropName="Poslovnica" msprop:Generator_RowDeletingName="PoslovnicaRowDeleting" msprop:Generator_RowChangingName="PoslovnicaRowChanging" msprop:Generator_RowEvHandlerName="PoslovnicaRowChangeEventHandler" msprop:Generator_RowDeletedName="PoslovnicaRowDeleted" msprop:Generator_UserTableName="Poslovnica" msprop:Generator_RowChangedName="PoslovnicaRowChanged" msprop:Generator_RowEvArgName="PoslovnicaRowChangeEvent" msprop:Generator_RowClassName="PoslovnicaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Grad" msprop:Generator_ColumnVarNameInTable="columnGrad" msprop:Generator_ColumnPropNameInRow="Grad" msprop:Generator_ColumnPropNameInTable="GradColumn" msprop:Generator_UserColumnName="Grad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

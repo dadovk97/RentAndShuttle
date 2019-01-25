@@ -1,0 +1,160 @@
+CREATE TABLE [dbo].[Administrator] (
+    [ID_Admina] INT          NOT NULL,
+    [Ime]       VARCHAR (50) NULL,
+    [Prezime]   VARCHAR (50) NULL,
+    [email]     VARCHAR (50) NULL,
+    [password]  VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([ID_Admina] ASC)
+);
+
+CREATE TABLE [dbo].[Automobil] (
+    [ID_Automobila]          INT          NOT NULL,
+    [Broj_Sasije_Automobila] VARCHAR (50) NULL,
+    [Reg_Oznaka_Automobila]  VARCHAR (50) NULL,
+    [Boja_Automobila]        VARCHAR (50) NULL,
+    [Marka_Automobila]       VARCHAR (50) NULL,
+    [Model_Automobila]       VARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([ID_Automobila] ASC)
+);
+
+CREATE TABLE [dbo].[Poslovnica] (
+    [ID_Poslovnice]        INT          NOT NULL,
+    [Ime_Poslovnice]       VARCHAR (50) NOT NULL,
+    [Grad]                 VARCHAR (50) NOT NULL,
+    [Post_Broj_Poslovnice] VARCHAR (50) NOT NULL,
+    [Zupanija_Poslovnice]  VARCHAR (50) NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID_Poslovnice] ASC)
+);
+
+CREATE TABLE [dbo].[Prijevoz] (
+    [Br_Rez_Prijevoza]                INT          IDENTITY (400, 1) NOT NULL,
+    [ImeKorisnikaPrijevoza]           VARCHAR (50) NOT NULL,
+    [PrezimeKorisnikaPrijevoza]       VARCHAR (50) NOT NULL,
+    [OIBKorisnikaPrijevoza]           VARCHAR (50) NOT NULL,
+    [EmailKorisnikaPrijevoza]         VARCHAR (50) NOT NULL,
+    [Polaziste]                       VARCHAR (50) NOT NULL,
+    [Odrediste]                       VARCHAR (50) NOT NULL,
+    [VrijemePolazak]                  DATE         NOT NULL,
+    [Adresa]                          VARCHAR (50) NOT NULL,
+    [PostanskiBrojKorisnikaPrijevoza] VARCHAR (50) NOT NULL,
+    [BrojMobitelaKorisnika]           VARCHAR (50) NOT NULL,
+    [BrojOsoba]                       VARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Prijevoz] PRIMARY KEY CLUSTERED ([Br_Rez_Prijevoza] ASC)
+);
+
+CREATE TABLE [dbo].[Recenzija] (
+    [Ocjena] INT NOT NULL
+);
+
+CREATE TABLE [dbo].[Registracija] (
+    [Ime]     VARCHAR (50) NOT NULL,
+    [Prezime] VARCHAR (50) NOT NULL,
+    [Email]   VARCHAR (50) NOT NULL,
+    [Lozinka] VARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Registracija] PRIMARY KEY CLUSTERED ([Email] ASC)
+);
+
+CREATE TABLE [dbo].[Rezervacija] (
+    [BR_Rez]                      INT          IDENTITY (300, 1) NOT NULL,
+    [ImeKorisnika]                VARCHAR (50) NOT NULL,
+    [PrezimeKorisnika]            VARCHAR (50) NOT NULL,
+    [OIBKorisnika]                VARCHAR (50) NOT NULL,
+    [BrojVozacke]                 VARCHAR (50) NOT NULL,
+    [EmailKorisnika]              VARCHAR (50) NOT NULL,
+    [AdresaKorisnika]             VARCHAR (50) NOT NULL,
+    [DrzavaKorisnika]             VARCHAR (50) NOT NULL,
+    [PostanskiBroj]               VARCHAR (50) NOT NULL,
+    [BrojTelefona]                VARCHAR (50) NOT NULL,
+    [BrojOsoba]                   VARCHAR (50) NOT NULL,
+    [Polaziste]                   VARCHAR (50) NOT NULL,
+    [DatumPolaska]                DATE         NOT NULL,
+    [VrijemeDolaskaCCA]           VARCHAR (50) NOT NULL,
+    [Odrediste]                   VARCHAR (50) NOT NULL,
+    [DatumOdredista]              DATE         NOT NULL,
+    [Automobil]                   VARCHAR (50) NOT NULL,
+    [Boja]                        VARCHAR (50) NOT NULL,
+    [VrstaOsiguranja]             VARCHAR (50) NOT NULL,
+    [Kartica]                     VARCHAR (50) NOT NULL,
+    [BrojKartice]                 VARCHAR (50) NOT NULL,
+    [MjesecIstekaKartice]         VARCHAR (50) NOT NULL,
+    [GodinaIstekaKartice]         VARCHAR (50) NOT NULL,
+    [NacinPlacanja]               VARCHAR (50) NOT NULL,
+    [ImeVlasnikaKartice]          VARCHAR (50) NOT NULL,
+    [PrezimeVlasnikaKartice]      VARCHAR (50) NOT NULL,
+    [OIBVlasnikaKartice]          VARCHAR (50) NOT NULL,
+    [BrojVozackeDozvole]          VARCHAR (50) NOT NULL,
+    [AdresaVlasnikaKartice]       VARCHAR (50) NOT NULL,
+    [DrzavaVlasnikaKartice]       VARCHAR (50) NOT NULL,
+    [PBVlasnikaKartice]           VARCHAR (50) NOT NULL,
+    [BrojTelefonaVlasnikaKartice] VARCHAR (50) NOT NULL,
+    [SjedalicaZaDijete]           VARCHAR (50) NULL,
+    [DodatanVozac]                VARCHAR (50) NULL,
+    [GPS]                         VARCHAR (50) NULL,
+    [PrelazakPrekoGranice]        VARCHAR (50) NULL,
+    CONSTRAINT [PK_RezervacijaA] PRIMARY KEY CLUSTERED ([BR_Rez] ASC)
+);
+
+
+
+
+CREATE TABLE [dbo].[Zaposlenik] (
+    [OIB_Zaposlenika]           VARCHAR (50) NOT NULL,
+    [Ime_Zaposlenika]           VARCHAR (50) NOT NULL,
+    [Prezime_Zaposlenika]       VARCHAR (50) NOT NULL,
+    [Email_Zaposlenika]         VARCHAR (50) NOT NULL,
+    [Lozinka_Zaposlenika]       VARCHAR (50) NOT NULL,
+    [Datum_Rodenja_Zaposlenika] DATE         NOT NULL,
+    [Adresa_Zaposlenika]        VARCHAR (50) NOT NULL,
+    [Post_Broj_Zaposlenika]     VARCHAR (50) NOT NULL,
+    [Br_Mobitela_Zaposlenika]   VARCHAR (50) NOT NULL,
+    [Broj_Racuna_Zaposlenika]   VARCHAR (50) NOT NULL,
+    [Poslovnica]                VARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Zaposlenik] PRIMARY KEY CLUSTERED ([Email_Zaposlenika] ASC)
+);
+
+INSERT INTO [dbo].[Administrator] ([ID_Admina], [Ime], [Prezime], [email], [password]) VALUES (0, N'Administrator', N'Administrator', N'administrator@rentandshuttle.com', N'adminrs')
+
+
+INSERT INTO [dbo].[Automobil] ([ID_Automobila], [Broj_Sasije_Automobila], [Reg_Oznaka_Automobila], [Boja_Automobila], [Marka_Automobila], [Model_Automobila]) VALUES (10, N'HJUZ67894321789058', N'ZG-257-BR', N'Plava', N'BMW', N'X6')
+INSERT INTO [dbo].[Automobil] ([ID_Automobila], [Broj_Sasije_Automobila], [Reg_Oznaka_Automobila], [Boja_Automobila], [Marka_Automobila], [Model_Automobila]) VALUES (11, N'JKLA1235678971023', N'ZG-872-JK', N'Crvena', N'Skoda', N'Fabia')
+INSERT INTO [dbo].[Automobil] ([ID_Automobila], [Broj_Sasije_Automobila], [Reg_Oznaka_Automobila], [Boja_Automobila], [Marka_Automobila], [Model_Automobila]) VALUES (12, N'GLSA1012456721013', N'ZG-567-DA', N'Siva', N'VW', N'Polo')
+INSERT INTO [dbo].[Automobil] ([ID_Automobila], [Broj_Sasije_Automobila], [Reg_Oznaka_Automobila], [Boja_Automobila], [Marka_Automobila], [Model_Automobila]) VALUES (13, N'LORS5231426789123', N'DA-021-KL', N'Crna', N'Audi', N'A5')
+INSERT INTO [dbo].[Automobil] ([ID_Automobila], [Broj_Sasije_Automobila], [Reg_Oznaka_Automobila], [Boja_Automobila], [Marka_Automobila], [Model_Automobila]) VALUES (14, N'KLSD9821345213126', N'DA-162-RU', N'Bijela', N'Mercedes', N'C')
+
+
+INSERT INTO [dbo].[Poslovnica] ([ID_Poslovnice], [Ime_Poslovnice], [Grad], [Post_Broj_Poslovnice], [Zupanija_Poslovnice]) VALUES (10, N'Poslovnica Pula', N'Pula', N'52100', N'Istarska županija')
+INSERT INTO [dbo].[Poslovnica] ([ID_Poslovnice], [Ime_Poslovnice], [Grad], [Post_Broj_Poslovnice], [Zupanija_Poslovnice]) VALUES (11, N'Poslovnica Osijek', N'Osijek', N'31300', N'Osjecko-baranjska županija')
+INSERT INTO [dbo].[Poslovnica] ([ID_Poslovnice], [Ime_Poslovnice], [Grad], [Post_Broj_Poslovnice], [Zupanija_Poslovnice]) VALUES (12, N'Poslovnica Zagreb', N'Zagreb', N'10000', N'Zagrebacka županija')
+INSERT INTO [dbo].[Poslovnica] ([ID_Poslovnice], [Ime_Poslovnice], [Grad], [Post_Broj_Poslovnice], [Zupanija_Poslovnice]) VALUES (13, N'Poslovnica  Zadar', N'Zadar', N'23000', N'Zadarska županija')
+
+
+SET IDENTITY_INSERT [dbo].[Prijevoz] ON
+INSERT INTO [dbo].[Prijevoz] ([Broj_Rezervacije_Prijevoza], [ImeKorisnikaPrijevoza], [PrezimeKorisnikaPrijevoza], [OIBKorisnikaPrijevoza], [EmailKorisnikaPrijevoza], [Polaziste], [Odrediste], [DatumPolaska], [Adresa], [PostanskiBrojKorisnikaPrijevoza], [BrojMobitelaKorisnika], [BrojOsoba]) VALUES (406, N'Iva', N'Sabolek', N'25251125', N'ivasabolek@gmail.com', N'Osijek', N'Pula', N'2/13/2019 2:43:03 PM', N'Preradoviceva 28A', N'52100', N'+385215251152521', N'3')
+INSERT INTO [dbo].[Prijevoz] ([Broj_Rezervacije_Prijevoza], [ImeKorisnikaPrijevoza], [PrezimeKorisnikaPrijevoza], [OIBKorisnikaPrijevoza], [EmailKorisnikaPrijevoza], [Polaziste], [Odrediste], [DatumPolaska], [Adresa], [PostanskiBrojKorisnikaPrijevoza], [BrojMobitelaKorisnika], [BrojOsoba]) VALUES (407, N'Iva', N'Sabolek', N'215125125', N'ivasabolek@gmail.com', N'Zagreb', N'Zadar', N'2/28/2019 2:44:08 PM', N'Preradoviceva 28A', N'52100', N'+385125152', N'2')
+INSERT INTO [dbo].[Prijevoz] ([Broj_Rezervacije_Prijevoza], [ImeKorisnikaPrijevoza], [PrezimeKorisnikaPrijevoza], [OIBKorisnikaPrijevoza], [EmailKorisnikaPrijevoza], [Polaziste], [Odrediste], [DatumPolaska], [Adresa], [PostanskiBrojKorisnikaPrijevoza], [BrojMobitelaKorisnika], [BrojOsoba]) VALUES (408, N'Danijel', N'Vukosavic', N'25151252251', N'vale22@gmail.com', N'Osijek', N'Zagreb', N'1/25/2019 2:47:20 PM', N'Rizanska 15', N'32100', N'+38521552215', N'3')
+SET IDENTITY_INSERT [dbo].[Prijevoz] OFF
+
+
+
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (4)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (5)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (1)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (2)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (5)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (3)
+INSERT INTO [dbo].[Recenzija] ([Ocjena]) VALUES (1)
+
+INSERT INTO [dbo].[Registracija] ([Ime], [Prezime], [Email], [Lozinka]) VALUES (N'Iva', N'Sabolek', N'ivasabolek@gmail.com', N'ivasa')
+INSERT INTO [dbo].[Registracija] ([Ime], [Prezime], [Email], [Lozinka]) VALUES (N'Valentin', N'Samija', N'vale22@gmail.com', N'pero')
+
+SET IDENTITY_INSERT [dbo].[Rezervacija] ON
+INSERT INTO [dbo].[Rezervacija] ([BR_Rezervacije], [ImeKorisnika], [PrezimeKorisnika], [OIBKorisnika], [BrojVozacke], [EmailKorisnika], [AdresaKorisnika], [DrzavaKorisnika], [PostanskiBroj], [BrojTelefona], [BrojOsoba], [Polaziste], [DatumPolaska], [VrijemeDolaskaCCA], [Odrediste], [DatumOdredista], [Automobil], [Boja], [VrstaOsiguranja], [Kartica], [BrojKartice], [MjesecIstekaKartice], [GodinaIstekaKartice], [NacinPlacanja], [ImeVlasnikaKartice], [PrezimeVlasnikaKartice], [OIBVlasnikaKartice], [BrojVozackeDozvole], [AdresaVlasnikaKartice], [DrzavaVlasnikaKartice], [PBVlasnikaKartice], [BrojTelefonaVlasnikaKartice], [SjedalicaZaDijete], [DodatanVozac], [GPS], [PrelazakPrekoGranice]) VALUES (325, N'Iva', N'Sabolek', N'215112521512', N'421124', N'ivasabolek@gmail.com', N'Preradoviceva 28A', N'Hrvatska', N'52100', N'+38599312512', N'3', N'Pula', N'2019-01-31', N'22h', N'Osijek', N'2019-02-01', N'Audi', N'Crvena', N'Kasko', N'American Express', N'15122121621261', N'04', N'23', N'Jednokratno', N'Iva', N'Sabolek', N'25112521552', N'15212125', N'Preradoviceva 28A', N'Hrvatska', N'52100', N'+38521616126', N'Sjedalica za dijete', N'Dodatan vozac', N'GPS', N'')
+INSERT INTO [dbo].[Rezervacija] ([BR_Rezervacije], [ImeKorisnika], [PrezimeKorisnika], [OIBKorisnika], [BrojVozacke], [EmailKorisnika], [AdresaKorisnika], [DrzavaKorisnika], [PostanskiBroj], [BrojTelefona], [BrojOsoba], [Polaziste], [DatumPolaska], [VrijemeDolaskaCCA], [Odrediste], [DatumOdredista], [Automobil], [Boja], [VrstaOsiguranja], [Kartica], [BrojKartice], [MjesecIstekaKartice], [GodinaIstekaKartice], [NacinPlacanja], [ImeVlasnikaKartice], [PrezimeVlasnikaKartice], [OIBVlasnikaKartice], [BrojVozackeDozvole], [AdresaVlasnikaKartice], [DrzavaVlasnikaKartice], [PBVlasnikaKartice], [BrojTelefonaVlasnikaKartice], [SjedalicaZaDijete], [DodatanVozac], [GPS], [PrelazakPrekoGranice]) VALUES (326, N'Iva', N'Sabolek', N'2512152125', N'52125152', N'ivasabolek@gmail.com', N'Preradoviceva 28A', N'Hrvatska ', N'52100', N'251551551', N'+38521512515', N'Osijek', N'2019-02-05', N'22H', N'Pula', N'2019-02-06', N'BMW', N'Plava', N'Kasko', N'American Express', N'125125251251', N'04', N'23', N'Jednokratno', N'Iva', N'Sabolek', N'241512525', N'5255252', N'241125521', N'251125', N'152125', N'251125152', N'Sjedalica za dijete', N'Dodatan vozac', N'GPS', N'')
+INSERT INTO [dbo].[Rezervacija] ([BR_Rezervacije], [ImeKorisnika], [PrezimeKorisnika], [OIBKorisnika], [BrojVozacke], [EmailKorisnika], [AdresaKorisnika], [DrzavaKorisnika], [PostanskiBroj], [BrojTelefona], [BrojOsoba], [Polaziste], [DatumPolaska], [VrijemeDolaskaCCA], [Odrediste], [DatumOdredista], [Automobil], [Boja], [VrstaOsiguranja], [Kartica], [BrojKartice], [MjesecIstekaKartice], [GodinaIstekaKartice], [NacinPlacanja], [ImeVlasnikaKartice], [PrezimeVlasnikaKartice], [OIBVlasnikaKartice], [BrojVozackeDozvole], [AdresaVlasnikaKartice], [DrzavaVlasnikaKartice], [PBVlasnikaKartice], [BrojTelefonaVlasnikaKartice], [SjedalicaZaDijete], [DodatanVozac], [GPS], [PrelazakPrekoGranice]) VALUES (327, N'Valentin', N'Šamija', N'1512251125', N'21412125125', N'vale22@gmail.com', N'Grubisno Polje 32', N'Hrvatska', N'43290', N'+38525125125215', N'2', N'Zagreb', N'2019-01-25', N'10H', N'Pula', N'2019-02-13', N'Mercedes', N'Plava', N'Osnovna', N'MaestroCard', N'251512152125125', N'05', N'23', N'Jednokratno', N'Valentin', N'Šamija', N'2525251', N'251522525', N'Grubisno Polje 22', N'Hrvatska ', N'42390', N'+38525151215', N'', N'', N'GPS', N'Prelazak preko granice')
+SET IDENTITY_INSERT [dbo].[Rezervacija] OFF
+
+iNSERT INTO [dbo].[Zaposlenik] ([OIB_Zaposlenika], [Ime_Zaposlenika], [Prezime_Zaposlenika], [Email_Zaposlenika], [Lozinka_Zaposlenika], [Datum_Rodenja_Zaposlenika], [Adresa_Zaposlenika], [Post_Broj_Zaposlenika], [Br_Mobitela_Zaposlenika], [Broj_Racuna_Zaposlenika], [Poslovnica]) VALUES (N'12345678910', N'Ivan', N'Iliæ', N'ivanilic@rentandshuttle.com', N'ivanilic', N'1991-12-04', N'Zagrebaèka 1''', N'10000', N'0987654321', N'HR123456789123456', N'Poslovnica Pula')
+INSERT INTO [dbo].[Zaposlenik] ([OIB_Zaposlenika], [Ime_Zaposlenika], [Prezime_Zaposlenika], [Email_Zaposlenika], [Lozinka_Zaposlenika], [Datum_Rodenja_Zaposlenika], [Adresa_Zaposlenika], [Post_Broj_Zaposlenika], [Br_Mobitela_Zaposlenika], [Broj_Racuna_Zaposlenika], [Poslovnica]) VALUES (N'5634209632', N'Petar', N'Krešo', N'kreso@gmail.com', N'klara123', N'1995-03-04', N'Ilica 24', N'10000', N'+3859912345678', N'HR2300002424115212', N'Poslovnica Zagreb')
+
+
+

@@ -1,0 +1,14 @@
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\bin\Release\RentShuttle.exe.config
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\bin\Release\RentShuttle.exe
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\bin\Release\RentShuttle.pdb
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\bin\Release\MetroFramework.dll
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\bin\Release\MetroFramework.Fonts.dll
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.Početna.resources
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.Prijava.resources
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.Registracija.resources
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.Properties.Resources.resources
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.csproj.GenerateResource.cache
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.csproj.CoreCompileInputs.cache
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.csproj.CopyComplete
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.exe
+E:\Programsko inženjerstvo\projekt\RentShuttle\RentShuttle\obj\Release\RentShuttle.pdb
